@@ -32,6 +32,9 @@ class ProfilePage extends StatelessWidget {
                       title: Text(
                         'CONNECT WITH ME',
                         textScaleFactor: 1.5,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       subtitle: Text('Social Platforms'),
                     ),
@@ -260,7 +263,7 @@ class ProfileInfo extends StatelessWidget {
       ),
       Text(
         "Gaurav\nDhingra",
-        textScaleFactor: 4,
+        textScaleFactor: 3.5,
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
