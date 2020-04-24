@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:github_portfolio/responsive_widget.dart';
-import 'dart:html' as html;
-import 'package:html/dom.dart' as html;
 import 'package:url_launcher/url_launcher.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -15,20 +13,69 @@ class ProfilePage extends StatelessWidget {
             ? AppBar(
                 title: Text(
                   'gauravxdhingra',
-                  textScaleFactor: 2,
+                  textScaleFactor: 1.5,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                elevation: 0,
+                elevation: 5,
                 backgroundColor: Colors.black,
               )
             : null,
         drawer: ResponsiveWidget.isSmallScreen(context)
             ? Drawer(
+                elevation: 5,
                 child: ListView(
                   padding: EdgeInsets.all(20),
-                  children: <Widget>[],
+                  children: <Widget>[
+                    ListTile(
+                      title: Text(
+                        'CONNECT WITH ME',
+                        textScaleFactor: 1.5,
+                      ),
+                      subtitle: Text('Social Platforms'),
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        child: Icon(BrandIcons.github),
+                      ),
+                      title: Text('GitHub'),
+                      onTap: () {
+                        launch('https://github.com/gauravxdhingra');
+                      },
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        child: Icon(BrandIcons.linkedin),
+                      ),
+                      title: Text('LinkedIn'),
+                      onTap: () {
+                        launch("https://www.linkedin.com/in/gauravxdhingra/");
+                      },
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        child: Icon(
+                          BrandIcons.instagram,
+                        ),
+                      ),
+                      title: Text('Instagram'),
+                      onTap: () {
+                        launch("https://www.instagram.com/gauravxdhingra/");
+                      },
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        child: Icon(
+                          BrandIcons.facebook,
+                        ),
+                      ),
+                      title: Text('Facebook'),
+                      onTap: () {
+                        launch("https://www.facebook.com/gauravxdhingra");
+                      },
+                    ),
+                  ],
                 ),
               )
             : null,
@@ -208,12 +255,12 @@ class ProfileInfo extends StatelessWidget {
         "Hi there! My name is",
         textScaleFactor: 2,
         style: TextStyle(
-          color: Colors.orange,
+          color: Colors.deepOrangeAccent,
         ),
       ),
       Text(
         "Gaurav\nDhingra",
-        textScaleFactor: 5,
+        textScaleFactor: 4,
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
@@ -229,25 +276,8 @@ class ProfileInfo extends StatelessWidget {
         overflow: TextOverflow.visible,
         style: TextStyle(color: Colors.white70),
       ),
-      Container(
-        height: 270,
-        width: 500,
-        child: Text(
-          "An Innovative and Enthusiastic Developer with a drive to build "
-          "useful software for the people and the community, carrying a strong "
-          "sense of Stunning User Interface and a Delightful User Experience to "
-          "make the product highly intuitive and easy to use for the end user",
-          softWrap: true,
-          overflow: TextOverflow.visible,
-          textScaleFactor: 1.5,
-          style: TextStyle(color: Colors.white70),
-        ),
-      ),
-      SizedBox(
-        height: 20,
-      ),
       Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           RaisedButton(
             shape: StadiumBorder(),
@@ -265,7 +295,8 @@ class ProfileInfo extends StatelessWidget {
           ),
           OutlineButton(
             borderSide: BorderSide(
-              color: Colors.red,
+              color: Colors.white,
+              width: 5,
             ),
             shape: StadiumBorder(),
             child: Text("Say Hi!"),
@@ -278,7 +309,27 @@ class ProfileInfo extends StatelessWidget {
             padding: EdgeInsets.all(10),
           )
         ],
-      )
+      ),
+      SizedBox(
+        height: 30,
+      ),
+      Container(
+        // height: 350,
+        width: 500,
+        child: Text(
+          "An Innovative and Enthusiastic Developer with a drive to build "
+          "useful software for the people and the community, carrying a strong "
+          "sense of Stunning User Interface and a Delightful User Experience to "
+          "make the product highly intuitive and easy to use for the end user.",
+          softWrap: true,
+          overflow: TextOverflow.visible,
+          textScaleFactor: 1.5,
+          style: TextStyle(color: Colors.white70),
+        ),
+      ),
+      SizedBox(
+        height: 20,
+      ),
     ],
   );
 
