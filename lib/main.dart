@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColorDark: Colors.black,
-        fontFamily: "Montserrat",
+        fontFamily: "OpenSans",
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: ProfilePage(),

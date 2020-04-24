@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:github_portfolio/responsive_widget.dart';
 import 'dart:html' as html;
 import 'package:html/dom.dart' as html;
@@ -107,7 +108,7 @@ class Gaurav extends StatelessWidget {
       children: <Widget>[
         Text(
           "GD",
-          textScaleFactor: 2,
+          textScaleFactor: 2.5,
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -133,19 +134,42 @@ class NavButton extends StatelessWidget {
   final text;
   final onPressed;
   final Color color;
+  final IconData icon;
 
   const NavButton(
       {Key key,
       @required this.text,
       @required this.onPressed,
+      this.icon,
       this.color = Colors.orange})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return OutlineButton(
-      child: Text(text),
+      // color: Colors.white,
+      highlightElevation: 10,
+      // highlightColor: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Icon(icon),
+          SizedBox(
+            width: 7,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: Text(
+              text,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
       borderSide: BorderSide(
+        style: BorderStyle.solid,
+        width: 2,
         color: color,
       ),
       onPressed: onPressed,
@@ -183,7 +207,9 @@ class ProfileInfo extends StatelessWidget {
       Text(
         "Hi there! My name is",
         textScaleFactor: 2,
-        style: TextStyle(color: Colors.orange),
+        style: TextStyle(
+          color: Colors.orange,
+        ),
       ),
       Text(
         "Gaurav\nDhingra",
@@ -197,14 +223,14 @@ class ProfileInfo extends StatelessWidget {
         height: 10,
       ),
       Text(
-        "A Student At Bhagwan Parshuram Institute of Technology, \nNew Delhi (IN).\n\n",
+        "A Student At Bhagwan Parshuram Institute of Technology, \nNew Delhi (IN).\n",
         softWrap: true,
         textScaleFactor: 1.5,
         overflow: TextOverflow.visible,
         style: TextStyle(color: Colors.white70),
       ),
       Container(
-        height: 220,
+        height: 270,
         width: 500,
         child: Text(
           "An Innovative and Enthusiastic Developer with a drive to build "
@@ -227,7 +253,11 @@ class ProfileInfo extends StatelessWidget {
             shape: StadiumBorder(),
             child: Text("Resume"),
             color: Colors.red,
-            onPressed: () {},
+            onPressed: () {
+              launch(
+                'https://drive.google.com/file/d/1OuP_XbRZNmDaI_lntCVtFqnmKiBfEcRv/view?usp=sharing',
+              );
+            },
             padding: EdgeInsets.all(10),
           ),
           SizedBox(
@@ -240,7 +270,11 @@ class ProfileInfo extends StatelessWidget {
             shape: StadiumBorder(),
             child: Text("Say Hi!"),
             color: Colors.red,
-            onPressed: () {},
+            onPressed: () {
+              launch(
+                "https://www.linkedin.com/in/gauravxdhingra/",
+              );
+            },
             padding: EdgeInsets.all(10),
           )
         ],
@@ -253,7 +287,7 @@ class ProfileInfo extends StatelessWidget {
     return ResponsiveWidget(
       largeScreen: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[profileImage(context), profileData],
       ),
       smallScreen: Column(
@@ -265,7 +299,7 @@ class ProfileInfo extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.1,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: profileData,
           )
         ],
@@ -277,34 +311,49 @@ class ProfileInfo extends StatelessWidget {
 class SocialInfo extends StatelessWidget {
   List<Widget> socialMediaWidgets() {
     return [
-      NavButton(
-        text: "GitHub",
-        onPressed: () {
-          html.window.open("https://github.com/gauravxdhingra", "Git");
-        },
-        color: Colors.blue,
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
+        child: NavButton(
+          icon: BrandIcons.github,
+          text: "GitHub",
+          onPressed: () {
+            launch('https://github.com/gauravxdhingra');
+          },
+          color: Colors.white,
+        ),
       ),
-      NavButton(
-        text: "LinkedIn",
-        onPressed: () {
-          html.window.open("https://www.linkedin.com/in/gauravxdhingra/", "Fb");
-        },
-        color: Colors.blue,
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
+        child: NavButton(
+          icon: BrandIcons.linkedin,
+          text: "LinkedIn",
+          onPressed: () {
+            launch("https://www.linkedin.com/in/gauravxdhingra/");
+          },
+          color: Colors.white,
+        ),
       ),
-      NavButton(
-        text: "Instagram",
-        onPressed: () {
-          html.window
-              .open("https://www.instagram.com/gauravxdhingra/", "Twitter");
-        },
-        color: Colors.blue,
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
+        child: NavButton(
+          icon: BrandIcons.instagram,
+          text: "Instagram",
+          onPressed: () {
+            launch("https://www.instagram.com/gauravxdhingra/");
+          },
+          color: Colors.white,
+        ),
       ),
-      NavButton(
-        text: "Facebook",
-        onPressed: () {
-          html.window.open("https://www.facebook.com/gauravxdhingra", "Fb");
-        },
-        color: Colors.blue,
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
+        child: NavButton(
+          icon: BrandIcons.facebook,
+          text: "Facebook",
+          onPressed: () {
+            launch("https://www.facebook.com/gauravxdhingra");
+          },
+          color: Colors.white,
+        ),
       ),
     ];
   }
@@ -317,18 +366,15 @@ class SocialInfo extends StatelessWidget {
               "Made with ❤ using Flutter",
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.grey,
+                color: Colors.white.withOpacity(0.8),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              "Gaurav Dhingra ©️2020",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.grey,
-              ),
+          Text(
+            "Gaurav Dhingra ©️2020",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.8),
             ),
           ),
         ],
@@ -348,9 +394,13 @@ class SocialInfo extends StatelessWidget {
         ],
       ),
       smallScreen: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           ...socialMediaWidgets(),
+          SizedBox(
+            height: 40,
+          ),
           copyRightText(),
         ],
       ),
