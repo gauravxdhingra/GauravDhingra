@@ -242,9 +242,7 @@ class ProfileInfo extends StatelessWidget {
 //            borderRadius: BorderRadius.circular(40),
           shape: BoxShape.circle,
           image: DecorationImage(
-            image: NetworkImage(
-              "https://scontent.fdel1-4.fna.fbcdn.net/v/t1.0-9/p960x960/53792671_431528817654025_7064724171124637696_o.jpg?_nc_cat=100&_nc_sid=85a577&_nc_ohc=oHwArTjA6hIAX9JIpXL&_nc_ht=scontent.fdel1-4.fna&_nc_tp=6&oh=2ab00406a8d35258299842f7256c91d7&oe=5EC73D5B",
-            ),
+            image: AssetImage("assets/gaurav.jpg"),
             alignment: Alignment.center,
             fit: BoxFit.cover,
           ),
