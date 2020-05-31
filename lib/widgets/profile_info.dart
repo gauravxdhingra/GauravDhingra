@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../responsive_widget.dart';
 
@@ -78,60 +79,60 @@ class ProfileInfo extends StatelessWidget {
             color: Colors.red,
             onPressed: () {
               launch(
-                              "https://www.linkedin.com/in/gauravxdhingra/",
-                            );
-                          },
-                          padding: EdgeInsets.all(10),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      // height: 350,
-                      width: 500,
-                      child: Text(
-                        "An Innovative and Enthusiastic Developer with a drive to build "
-                        "useful software for the people and the community, carrying a strong "
-                        "sense of Stunning User Interface and a Delightful User Experience to "
-                        "make the product highly intuitive and easy to use for the end user.",
-                        softWrap: true,
-                        overflow: TextOverflow.visible,
-                        textScaleFactor: 1.5,
-                        style: TextStyle(color: Colors.white70),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                  ],
-                );
-              
-                @override
-                Widget build(BuildContext context) {
-                  return ResponsiveWidget(
-                    largeScreen: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[profileImage(context), profileData],
-                    ),
-                    smallScreen: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        profileImage(context),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
-                          child: profileData,
-                        )
-                      ],
-                    ),
-                  );
-                }
-              
-                static void launch(String s) {}
+                "https://www.linkedin.com/in/gauravxdhingra/",
+              );
+            },
+            padding: EdgeInsets.all(10),
+          )
+        ],
+      ),
+      SizedBox(
+        height: 30,
+      ),
+      Container(
+        // height: 350,
+        width: 500,
+        child: Text(
+          "An Innovative and Enthusiastic Developer with a drive to build "
+          "useful software for the people and the community, carrying a strong "
+          "sense of Stunning User Interface and a Delightful User Experience to "
+          "make the product highly intuitive and easy to use for the end user.",
+          softWrap: true,
+          overflow: TextOverflow.visible,
+          textScaleFactor: 1.5,
+          style: TextStyle(color: Colors.white70),
+        ),
+      ),
+      SizedBox(
+        height: 20,
+      ),
+    ],
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return ResponsiveWidget(
+      largeScreen: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[profileImage(context), profileData],
+      ),
+      smallScreen: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          profileImage(context),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.1,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: profileData,
+          )
+        ],
+      ),
+    );
+  }
+
+  // static void launch(String s) {}
 }
