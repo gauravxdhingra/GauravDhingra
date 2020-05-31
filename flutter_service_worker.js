@@ -1,11 +1,12 @@
 'use strict';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "1450c3891c127ad706f5b641d0c3d1c8",
+  "assets/AssetManifest.json": "aeac3140239b22daeaa768f1862621c2",
 "assets/assets/fonts/OpenSans-Bold.ttf": "1025a6e0fb0fa86f17f57cc82a6b9756",
 "assets/assets/fonts/OpenSans-ExtraBold.ttf": "fb7e3a294cb07a54605a8bb27f0cd528",
 "assets/assets/fonts/OpenSans-Light.ttf": "2d0bdc8df10dee036ca3bedf6f3647c6",
 "assets/assets/fonts/OpenSans-Regular.ttf": "3ed9575dcc488c3e3a5bd66620bdf5a4",
+"assets/assets/gaurav.jpg": "c8439920f86aadd9d29c3e6fe70abc21",
 "assets/FontManifest.json": "c855b27c56120013d66439af28510e98",
 "assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
 "assets/LICENSE": "65870608bbf9ac098110f293a3d368fb",
@@ -17,7 +18,7 @@ const RESOURCES = {
 "icons/Icon-512.png": "b414597e01e36cc52f34fe8b79ee3d09",
 "index.html": "c88cff7a30fe1785ebd54ca23491233b",
 "/": "c88cff7a30fe1785ebd54ca23491233b",
-"main.dart.js": "b5d7ef60ff79ea675b289ccedd15623f",
+"main.dart.js": "3c45c8a2413b8a4714e82af8e47d2414",
 "manifest.json": "4c441772fce6435e740e6f4c17edf4e1"
 };
 
