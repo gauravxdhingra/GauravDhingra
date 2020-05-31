@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:github_portfolio/profile_page.dart';
+
+import 'profile_page.dart';
 
 void main() {
   runApp(MyApp());
