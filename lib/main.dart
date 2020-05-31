@@ -23,3 +23,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//  flutter pub global activate peanut   
+// git push origin --set-upstream gh-pages
+//  flutter pub global run peanut:peanut  

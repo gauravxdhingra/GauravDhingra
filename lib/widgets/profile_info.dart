@@ -52,6 +52,9 @@ class ProfileInfo extends StatelessWidget {
         overflow: TextOverflow.visible,
         style: TextStyle(color: Colors.white70),
       ),
+      SizedBox(
+        height: 10,
+      ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
